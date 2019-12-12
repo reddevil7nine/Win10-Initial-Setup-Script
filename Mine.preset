@@ -1,7 +1,7 @@
 ##########
 # Win 10 / Server 2016 / Server 2019 Initial Setup Script - Default preset
 # Author: Disassembler <disassembler@dasm.cz>
-# Version: v3.3, 2018-10-22
+# Version: v3.7, 2019-05-31
 # Source: https://github.com/Disassembler0/Win10-Initial-Setup-Script
 ##########
 
@@ -16,7 +16,7 @@ DisableWebSearch
 DisableAppSuggestions
 DisableActivityHistory
 EnableBackgroundApps
-DisableLocationTracking
+EnableLocationTracking
 DisableMapUpdates
 DisableFeedback
 DisableTailoredExperiences
@@ -27,40 +27,37 @@ DisableErrorReporting
 SetP2PUpdateDisable
 DisableDiagTrack
 DisableWAPPush
-ShowRecentJumplists
+EnableClearRecentFiles
+DisableRecentFiles
 
 ### Security Tweaks ###
 EnableAdminShares
-
 SetCurrentNetworkPrivate
-
 DisableNetDevicesAutoInst
 DisableFirewall
-
 DisableDefender
 DisableDefenderCloud
-
 HideAccountProtectionWarn
 DisableDownloadBlocking
 EnableScriptHost
 EnableDotNetStrongCrypto
-
 EnableF8BootMenu
 SetDEPOptOut
 
 ### Service Tweaks ###
-
 DisableUpdateDriver
 DisableUpdateRestart
+DisableMaintenanceWakeUp
 DisableHomeGroups
 DisableSharedExperiences
+DisableClipboardHistory
 DisableRemoteAssistance
 EnableRemoteDesktop
 EnableAutoplay
 EnableAutorun
-
+DisableRestorePoints
+EnableNTFSLongPaths
 DisableNTFSLastAccess
-
 DisableHibernation
 
 ### UI Tweaks ###
@@ -69,26 +66,28 @@ EnableLockScreen
 EnableLockScreenRS1
 ShowNetworkOnLockScreen
 ShowShutdownOnLockScreen
+EnableLockScreenBlur
 DisableAeroShake
-DisableStickyKeys
+DisableAccessibilityKeys
 ShowTaskManagerDetails
 HideFileOperationsDetails
-
+DisableFileDeleteConfirm
 HideTaskbarSearch
 HideTaskView
 ShowLargeTaskbarIcons
 SetTaskbarCombineAlways
 HideTaskbarPeopleIcon
-HideTrayIcons
+ShowTrayIcons
 DisableSearchAppInStore
 DisableNewAppPrompt
 HideRecentlyAddedApps
-
+HideMostUsedApps
+SetControlPanelSmallIcons
 DisableShortcutInName
 ShowShortcutArrow
 SetVisualFXAppearance
-
 EnableNumlock
+EnableEnhPointerPrecision
 
 ### Explorer UI Tweaks ###
 ShowKnownExtensions
@@ -102,8 +101,11 @@ HideSyncNotifications
 HideRecentShortcuts
 SetExplorerThisPC
 ShowQuickAccess
+HideRecycleBinFromDesktop
 HideThisPCFromDesktop
-
+HideUserFolderFromDesktop
+HideControlPanelFromDesktop
+HideNetworkFromDesktop
 ShowDesktopInThisPC
 ShowDesktopInExplorer
 ShowDocumentsInThisPC
@@ -117,7 +119,10 @@ ShowPicturesInExplorer
 HideVideosFromThisPC
 ShowVideosInExplorer
 Hide3DObjectsFromThisPC
-
+Hide3DObjectsFromExplorer
+HideIncludeInLibraryMenu
+ShowGiveAccessToMenu
+HideShareMenu
 EnableThumbnails
 DisableThumbnailCache
 DisableThumbsDBOnNetwork
@@ -125,15 +130,20 @@ DisableThumbsDBOnNetwork
 ### Application Tweaks ###
 DisableOneDrive
 UninstallOneDrive
-UninstallMsftBloat
+InstallMsftBloat
 UninstallThirdPartyBloat
-
-DisableXboxFeatures
+InstallWindowsStore
+EnableXboxFeatures
 EnableAdobeFlash
+DisableEdgePreload
 DisableEdgeShortcutCreation
 
+EnableFirstLogonAnimation
+DisableMediaSharing
+UninstallMediaPlayer
+UninstallWorkFolders
 InstallLinuxSubsystem
-
+InstallNET23
 SetPhotoViewerAssociation
 RemovePhotoViewerOpenWith
 
@@ -141,9 +151,10 @@ UninstallXPSPrinter
 RemoveFaxPrinter
 UninstallFaxAndScan
 
-### Unpinning ###
-UnpinStartMenuTiles
-UnpinTaskbarIcons
+### Mine ###
+UpdateEnvironmentVariables
+RemoveUserTempDirs
+DisableUACDim
 
 ### Auxiliary Functions ###
 WaitForKey

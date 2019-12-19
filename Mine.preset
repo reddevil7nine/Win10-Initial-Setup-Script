@@ -1,7 +1,7 @@
 ##########
 # Win 10 / Server 2016 / Server 2019 Initial Setup Script - Default preset
 # Author: Disassembler <disassembler@dasm.cz>
-# Version: v3.7, 2019-05-31
+# Version: v3.8, 2019-09-11
 # Source: https://github.com/Disassembler0/Win10-Initial-Setup-Script
 ##########
 
@@ -16,7 +16,7 @@ DisableWebSearch
 DisableAppSuggestions
 DisableActivityHistory
 EnableBackgroundApps
-EnableLocationTracking
+EnableLocation
 DisableMapUpdates
 DisableFeedback
 DisableTailoredExperiences
@@ -32,8 +32,6 @@ DisableRecentFiles
 
 ### Security Tweaks ###
 EnableAdminShares
-SetCurrentNetworkPrivate
-DisableNetDevicesAutoInst
 DisableFirewall
 DisableDefender
 DisableDefenderCloud
@@ -44,15 +42,19 @@ EnableDotNetStrongCrypto
 EnableF8BootMenu
 SetDEPOptOut
 
+### Network Tweaks ###
+SetCurrentNetworkPrivate
+DisableNetDevicesAutoInst
+DisableHomeGroups
+DisableRemoteAssistance
+EnableRemoteDesktop
+
 ### Service Tweaks ###
 DisableUpdateDriver
 DisableUpdateRestart
 DisableMaintenanceWakeUp
-DisableHomeGroups
 DisableSharedExperiences
 DisableClipboardHistory
-DisableRemoteAssistance
-EnableRemoteDesktop
 EnableAutoplay
 EnableAutorun
 DisableRestorePoints
@@ -88,11 +90,13 @@ ShowShortcutArrow
 SetVisualFXAppearance
 EnableNumlock
 EnableEnhPointerPrecision
+DisableF1HelpKey
 
 ### Explorer UI Tweaks ###
 ShowKnownExtensions
 ShowHiddenFiles
 DisableNavPaneExpand
+ShowNavPaneAllFolders
 EnableFldrSeparateProcess
 EnableRestoreFldrWindows
 DisableSharingWizard
@@ -112,14 +116,14 @@ ShowDocumentsInThisPC
 ShowDocumentsInExplorer
 ShowDownloadsInThisPC
 ShowDownloadsInExplorer
-HideMusicFromThisPC
+ShowMusicInThisPC
 ShowMusicInExplorer
 ShowPicturesInThisPC
 ShowPicturesInExplorer
-HideVideosFromThisPC
+ShowVideosInThisPC
 ShowVideosInExplorer
-Hide3DObjectsFromThisPC
-Hide3DObjectsFromExplorer
+Show3DObjectsInThisPC
+Show3DObjectsInExplorer
 HideIncludeInLibraryMenu
 ShowGiveAccessToMenu
 HideShareMenu
@@ -137,16 +141,16 @@ EnableXboxFeatures
 EnableAdobeFlash
 DisableEdgePreload
 DisableEdgeShortcutCreation
-
+DisableIEFirstRun
 EnableFirstLogonAnimation
 DisableMediaSharing
 UninstallMediaPlayer
 UninstallWorkFolders
 InstallLinuxSubsystem
+InstallSSHClient
 InstallNET23
 SetPhotoViewerAssociation
 RemovePhotoViewerOpenWith
-
 UninstallXPSPrinter
 RemoveFaxPrinter
 UninstallFaxAndScan

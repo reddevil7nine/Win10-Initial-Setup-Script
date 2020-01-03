@@ -63,7 +63,7 @@ DisableNTFSLastAccess
 DisableHibernation
 
 ### UI Tweaks ###
-DisableActionCenter
+EnableActionCenter
 EnableLockScreen
 EnableLockScreenRS1
 ShowNetworkOnLockScreen
@@ -79,7 +79,7 @@ HideTaskView
 ShowLargeTaskbarIcons
 SetTaskbarCombineAlways
 HideTaskbarPeopleIcon
-ShowTrayIcons
+HideTrayIcons
 DisableSearchAppInStore
 DisableNewAppPrompt
 HideRecentlyAddedApps
@@ -134,7 +134,7 @@ DisableThumbsDBOnNetwork
 ### Application Tweaks ###
 DisableOneDrive
 UninstallOneDrive
-InstallMsftBloat
+UninstallMsftBloat
 UninstallThirdPartyBloat
 InstallWindowsStore
 EnableXboxFeatures
@@ -159,6 +159,9 @@ UninstallFaxAndScan
 UpdateEnvironmentVariables
 RemoveUserTempDirs
 DisableUACDim
+UninstallMsftBloat
+InstallMsftBloatTwo
+EnableAdminSharesTwo
 
 ### Auxiliary Functions ###
 WaitForKey

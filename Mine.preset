@@ -58,6 +58,7 @@ DisableClipboardHistory
 EnableAutoplay
 EnableAutorun
 DisableRestorePoints
+DisableSwapFile
 EnableNTFSLongPaths
 DisableNTFSLastAccess
 DisableHibernation

@@ -39,13 +39,36 @@ Function EnableAdminSharesTwo {
 	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Type DWord -Value 1
 }
 
+
+Function ConfigurePlacesBar {
+	Write-Output "Configuring Places Bar..."
+
+	$Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\comdlg32\Placesbar"
+
+	If (!(Test-Path $Path)) {
+		New-Item -Path $Path -Force | Out-Null
+	}
+	Set-ItemProperty -Path $Path -Name "Place0" -Type String  -Value "Desktop"
+	Set-ItemProperty -Path $Path -Name "Place1" -Type String -Value "Downloads"
+	Set-ItemProperty -Path $Path -Name "Place2" -Type String -Value "MyComputer"
+	Set-ItemProperty -Path $Path -Name "Place3" -Type String -Value $Home
+	# Set-ItemProperty -Path $Path -Name "Place4" -Type String -Value "C:\Kaplan\source"
+}
+
+Function SetComputerName {
+	Write-Output "Setting Computer name..."
+
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName" -Name "ComputerName" -Type String  -Value "KAP-IT-6127"
+}
+
 # Enable aero peek
 # remove extra one drive env vars
 # turn on auto hide systray icons
 # hide/show certain systra icons
 # virtual desktop show window on all desktops
 # alt tab all desktops
-# set computer name
+# set computer name via param
+# Set additional places bar via param
 
 # Export functions
 Export-ModuleMember -Function *

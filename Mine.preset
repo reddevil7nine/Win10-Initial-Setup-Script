@@ -163,6 +163,8 @@ DisableUACDim
 UninstallMsftBloat
 InstallMsftBloatTwo
 EnableAdminSharesTwo
+ConfigurePlacesBar
+SetComputerName
 
 ### Auxiliary Functions ###
 WaitForKey

@@ -45,9 +45,6 @@ Function ConfigurePlacesBar {
 
 	$Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\comdlg32\Placesbar"
 
-	If (!(Test-Path $Path)) {
-		New-Item -Path $Path -Force | Out-Null
-	}
 	Set-ItemProperty -Path $Path -Name "Place0" -Type String  -Value "Desktop"
 	Set-ItemProperty -Path $Path -Name "Place1" -Type String -Value "Downloads"
 	Set-ItemProperty -Path $Path -Name "Place2" -Type String -Value "MyComputer"
@@ -59,6 +56,20 @@ Function SetComputerName {
 	Write-Output "Setting Computer name..."
 
 	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName" -Name "ComputerName" -Type String  -Value "KAP-IT-6127"
+}
+
+Function AddContextMenuHash {
+	Write-Output "Adding Hash functions to context menu..."
+
+	$Path = "HKCR:\*\shell\GetFileHash\shell"
+	Set-ItemProperty -Path "${Path}\01SHA1\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA1 | format-list"
+	Set-ItemProperty -Path "${Path}\02SHA256\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA256 | format-list"
+	Set-ItemProperty -Path "${Path}\03SHA384\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA384 | format-list"
+	Set-ItemProperty -Path "${Path}\04SHA512\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA512 | format-list"
+	Set-ItemProperty -Path "${Path}\05MACTripleDES\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm MACTripleDES | format-list"
+	Set-ItemProperty -Path "${Path}\06MD5\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm MD5 | format-list"
+	Set-ItemProperty -Path "${Path}\07RIPEMD160\command" -Name "(Default)" -Type String  -Value "powershell.exe -noexit get-filehash -literalpath '%1' -algorithm RIPEMD160 | format-list"
+
 }
 
 # Enable aero peek
